@@ -17,6 +17,8 @@ RUN rpm --import http://yum.jasonlitka.com/RPM-GPG-KEY-jlitka && \
 	echo "Include vhost.d/*.conf" >> /etc/httpd/conf/httpd.conf && \
 	chmod +x /init.sh
 
+RUM rm -f /etc/httpd/conf.d/welcome.conf
+
 EXPOSE 80 443
 
 CMD ["/init.sh"]
